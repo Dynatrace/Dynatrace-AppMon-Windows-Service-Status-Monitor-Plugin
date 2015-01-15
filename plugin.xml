@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="com.dynatrace.diagnostics.plugins.WindowsServiceStatusPlugin" name="Windows Service Status Plugin">
+    <information>
+      <category value="" />
+      <description value="The Windows Service Status Plugin returns the status of the specified service." />
+	  <license value="dynaTraceBSD.txt" />
+	  <supportlevel value="unsupported"/>
+    </information>
+    <configuration>
+      <property key="service" label="Service" type="string" description="Windows service name." default="" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitor" id="com.dynatrace.diagnostics.plugins.WindowsServiceStatusPlugin.monitor" name="Windows Service Status Monitor">
+    <plugin configid="com.dynatrace.diagnostics.plugins.WindowsServiceStatusPlugin" class="ws.WSMonitor" />
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugins.WindowsServiceStatusPlugin.monitor.metricgroup" name="Windows Service Status Monitor">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugins.WindowsServiceStatusPlugin.monitor">
+      <metric name="serviceStatus" unit="number" description="If the service is running, the measure will yield 1, otherwise 0. " />
+    </metricgroup>
+  </extension>
+</plugin>
+
