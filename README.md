@@ -6,4 +6,4 @@ The plugin is querying the specified service on the given host(s) using the Wind
 If the service is started then the serviceStatus measure will record a "1". If the service is stopped it will return "0". In case of an access or other problem the plugin will fail to execute with an
 error message indicating the problem.
 
-Find further information in the [dynatrace community](https://community.compuwareapm.com/community/display/DL/Windows+Service+Status+Monitor+Plugin) 
+Find further information in the [dynatrace community](https://community.dynatrace.com/community/display/DL/Windows+Service+Status+Monitor+Plugin) 
